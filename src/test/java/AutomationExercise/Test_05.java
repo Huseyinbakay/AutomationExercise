@@ -19,7 +19,7 @@ public class Test_05 extends TestBaseClass {
 
         // Verify that home page is visible successfully
         Assert.assertTrue(driver.findElement(By.tagName("h1")).isDisplayed());
-
+        homePageScreenShot();
 
         //4. Click on 'Signup / Login' button
         driver.findElement(By.xpath("//a[@href='/login']")).click();
@@ -33,7 +33,7 @@ public class Test_05 extends TestBaseClass {
         //7. Click 'Signup' button
         driver.findElement(By.name("name")).sendKeys("BlossomDeckow", Keys.TAB);
 
-        driver.findElement(By.xpath("//input[@data-qa='signup-email']")).sendKeys("bertram.stoltenberg@gmail.com",Keys.ENTER);
+        driver.findElement(By.xpath("//input[@data-qa='signup-email']")).sendKeys("maurice.damore@yahoo.com",Keys.ENTER);
 
 
        // 8. Verify error 'Email Address already exist!' is visible

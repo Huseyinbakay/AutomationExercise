@@ -3,9 +3,10 @@ package AutomationExercise;
 import baseClass.TestBaseClass;
 import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class Test_04 extends TestBaseClass {
 
@@ -28,6 +29,7 @@ public class Test_04 extends TestBaseClass {
         //5. Verify 'Login to your account' is visible
         WebElement isVisibleLoginAccount=driver.findElement(By.xpath("//h2[.='Login to your account']"));
         Assert.assertTrue(isVisibleLoginAccount.isDisplayed());
+        screenShotWebElement(isVisibleLoginAccount);
 
 
         //6. Enter correct email address and password
@@ -45,7 +47,7 @@ public class Test_04 extends TestBaseClass {
         // 8. Verify that 'Logged in as username' is visible
         WebElement isDisplayedLoggedinUser=driver.findElement(By.xpath("(//a)[11]"));
         Assert.assertTrue(isDisplayedLoggedinUser.isDisplayed());
-
+        screenShotWebElement(isDisplayedLoggedinUser);
 
         //9. Click 'Logout' button
         driver.findElement(By.xpath("//a[@href='/logout']")).click();
@@ -53,9 +55,11 @@ public class Test_04 extends TestBaseClass {
 
 
         //10. Verify that user is navigated to login page
-        String loginPageText=driver.findElement(By.xpath("//h2[.='Login to your account']")).getText();
+        WebElement loginPageText=driver.findElement(By.xpath("//h2[.='Login to your account']"));
+        screenShotWebElement(loginPageText);
+        String loginPageText1=loginPageText.getText();
 
-        Assert.assertEquals(loginPageText,"Login to your account");
+        Assert.assertEquals(loginPageText1,"Login to your account");
 
 
     }

@@ -193,9 +193,7 @@ public class Test_02 extends TestBaseClass {
         //10. Verify that 'ACCOUNT DELETED!' is visible
         Assert.assertTrue(driver.findElement(By.xpath("//b[.='Account Deleted!']")).isDisplayed());
 
-
-
-
+        screenShotWebElement(driver.findElement(By.xpath("//b[.='Account Deleted!']")));
 
 
     }
