@@ -34,7 +34,7 @@ public class Test_04 extends TestBaseClass {
 
         //6. Enter correct email address and password
         driver.findElement(By.xpath("//input[@data-qa='login-email']")).sendKeys("rosita.price@gmail.com", Keys.TAB);
-        //bertram.stoltenberg@gmail.com
+
         //
         driver.findElement(By.name("password")).sendKeys("4uk7tcew1tuw");
 
